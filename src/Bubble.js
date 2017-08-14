@@ -121,9 +121,9 @@ export default class Bubble extends React.Component {
   render() {
     return (
       <View style={[styles[this.props.position].container, this.props.containerStyle[this.props.position]]}>
-        {if (this.props.position === 'right') {
+        {this.props.position === 'right' &&
           this.renderTime()
-        }}
+        }
         <View style={[styles[this.props.position].wrapper, this.props.wrapperStyle[this.props.position]/*, this.handleBubbleToNext(), this.handleBubbleToPrevious()*/]}>
           <TouchableWithoutFeedback
             onLongPress={this.onLongPress}
@@ -140,9 +140,9 @@ export default class Bubble extends React.Component {
             </View>
           </TouchableWithoutFeedback>
         </View>
-        {if (this.props.position === 'left') {
+        {this.props.position === 'left' &&
           this.renderTime()
-        }}
+        }
       </View>
     );
   }
