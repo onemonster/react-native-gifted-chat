@@ -99,8 +99,8 @@ export default class Bubble extends React.Component {
     } else {
       if (this.props.currentMessage.text) {
         const options = [
-          'Copy Text',
-          'Cancel',
+          '복사하기',
+          '취소',
         ];
         const cancelButtonIndex = options.length - 1;
         this.context.actionSheet().showActionSheetWithOptions({
@@ -121,7 +121,10 @@ export default class Bubble extends React.Component {
   render() {
     return (
       <View style={[styles[this.props.position].container, this.props.containerStyle[this.props.position]]}>
-        <View style={[styles[this.props.position].wrapper, this.props.wrapperStyle[this.props.position], this.handleBubbleToNext(), this.handleBubbleToPrevious()]}>
+        {if (this.props.position === 'right') {
+          this.renderTime()
+        }}
+        <View style={[styles[this.props.position].wrapper, this.props.wrapperStyle[this.props.position]/*, this.handleBubbleToNext(), this.handleBubbleToPrevious()*/]}>
           <TouchableWithoutFeedback
             onLongPress={this.onLongPress}
             accessibilityTraits="text"
@@ -132,12 +135,14 @@ export default class Bubble extends React.Component {
               {this.renderMessageImage()}
               {this.renderMessageText()}
               <View style={[styles.bottom, this.props.bottomContainerStyle[this.props.position]]}>
-                {this.renderTime()}
                 {this.renderTicks()}
               </View>
             </View>
           </TouchableWithoutFeedback>
         </View>
+        {if (this.props.position === 'left') {
+          this.renderTime()
+        }}
       </View>
     );
   }
@@ -148,10 +153,11 @@ const styles = {
     container: {
       flex: 1,
       alignItems: 'flex-start',
+      flexDirection: 'row'
     },
     wrapper: {
       borderRadius: 15,
-      backgroundColor: '#f0f0f0',
+      backgroundColor: '#FFFFFF',
       marginRight: 60,
       minHeight: 20,
       justifyContent: 'flex-end',
@@ -167,10 +173,11 @@ const styles = {
     container: {
       flex: 1,
       alignItems: 'flex-end',
+      flexDirection: 'row'
     },
     wrapper: {
       borderRadius: 15,
-      backgroundColor: '#0084ff',
+      backgroundColor: '#CBE2FF',
       marginLeft: 60,
       minHeight: 20,
       justifyContent: 'flex-end',
