@@ -16,34 +16,33 @@ export default class Send extends React.Component {
   //   return false;
   // }
   render() {
-    if (this.props.text.trim().length > 0) {
-      return (
-        <TouchableOpacity
-          style={[styles.container, this.props.containerStyle]}
-          onPress={() => {
+    return (
+      <TouchableOpacity
+        style={[styles.container, this.props.containerStyle]}
+        onPress={() => {
+          if (this.props.text.trim().length > 0) {
             this.props.onSend({text: this.props.text.trim()}, true);
-          }}
-          accessibilityTraits="button"
-        >
-          <Text style={[styles.text, this.props.textStyle]}>{this.props.label}</Text>
-        </TouchableOpacity>
-      );
-    }
-    return <View/>;
+          }
+        }}
+        accessibilityTraits="button"
+      >
+        <Text style={[styles.text, this.props.textStyle]}>{this.props.label}</Text>
+      </TouchableOpacity>
+    );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     height: 44,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   text: {
-    color: '#0084ff',
-    fontWeight: '600',
-    fontSize: 17,
+    color: '#74A3D9',
+    fontSize: 14,
+    fontWeight: 'bold',
     backgroundColor: 'transparent',
-    marginBottom: 12,
     marginLeft: 10,
     marginRight: 10,
   },
@@ -52,7 +51,7 @@ const styles = StyleSheet.create({
 Send.defaultProps = {
   text: '',
   onSend: () => {},
-  label: 'Send',
+  label: '보내기',
   containerStyle: {},
   textStyle: {},
 };

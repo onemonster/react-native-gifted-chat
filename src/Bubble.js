@@ -152,13 +152,14 @@ const styles = {
   left: StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: 'flex-start',
-      flexDirection: 'row'
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      alignItems: 'baseline',
+      marginBottom: 5
     },
     wrapper: {
-      borderRadius: 15,
+      borderRadius: 5,
       backgroundColor: '#FFFFFF',
-      marginRight: 60,
       minHeight: 20,
       justifyContent: 'flex-end',
     },
@@ -172,13 +173,14 @@ const styles = {
   right: StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: 'flex-end',
-      flexDirection: 'row'
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignItems: 'baseline',
+      marginBottom: 5
     },
     wrapper: {
-      borderRadius: 15,
+      borderRadius: 5,
       backgroundColor: '#CBE2FF',
-      marginLeft: 60,
       minHeight: 20,
       justifyContent: 'flex-end',
     },

@@ -490,6 +490,7 @@ class GiftedChat extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#FAFAFA'
   },
 });
 
@@ -501,7 +502,7 @@ GiftedChat.childContextTypes = {
 GiftedChat.defaultProps = {
   messages: [],
   text: undefined,
-  placeholder: 'Type a message...',
+  placeholder: '메세지를 입력하세요',
   messageIdGenerator: () => uuid.v4(),
   user: {},
   onSend: () => {},

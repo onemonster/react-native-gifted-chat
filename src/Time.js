@@ -28,9 +28,11 @@ const containerStyle = {
 };
 
 const textStyle = {
-  fontSize: 10,
+  fontSize: 8,
   backgroundColor: 'transparent',
   textAlign: 'right',
+  fontFamily: 'notosans',
+  lineHeight: 8
 };
 
 const styles = {
@@ -39,7 +41,7 @@ const styles = {
       ...containerStyle,
     },
     text: {
-      color: '#aaa',
+      color: '#9D9C9C',
       ...textStyle,
     },
   }),
@@ -48,7 +50,7 @@ const styles = {
       ...containerStyle,
     },
     text: {
-      color: '#fff',
+      color: '#9D9C9C',
       ...textStyle,
     },
   }),
